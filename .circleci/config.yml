@@ -21,8 +21,13 @@ jobs:
           kotlinc/bin/kotlinc -classpath kloudformation.jar ../Stack.kt -include-runtime -d stack.jar
           java -classpath stack.jar:kloudformation.jar io.kloudformation.StackBuilderKt Stack template.yml
           mv template.yml ..
+
     - store_artifacts:
         path: template.yml
+
+    - run:
+        name: Install CFN Scripts
+        command: npm install -g cfn-create-or-update
     - run:
         name: Docker Build
         command: docker build -t hexlabs/kloudformation-playground:latest .
@@ -41,6 +46,7 @@ jobs:
           docker push hexlabs/kloudformation-playground:latest
           docker push hexlabs/kloudformation-playground:0.1.$CIRCLE_BUILD_NUM
 
+
     - run:
-        name: Deploy Stack
-        command: node ./node_modules/cfn-create-or-update/cli.js --stack-name kloudformation-web --template-body file://template.yml --timeout-in-minutes 120 --region eu-west-1 --wait
+        name: Deploy  Stack
+        command: cfn-create-or-update --stack-name hexlabs-kotlin-playground --template-body file://template.yml --timeout-in-minutes 120 --region eu-west-1 --wait --capabilities CAPABILITY_IAM
