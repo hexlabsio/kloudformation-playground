@@ -4,4 +4,4 @@ ADD lib/*.jar /app/lib/
 
 COPY executor.policy /app/executor.policy
 
-CMD ["java", "-jar", "playground.jar"]
+CMD ["java", "-jar", "playground.jar", "-cors", "-cors-allowed-origin", "kloudformation.hexlabs.io,hexlabsio.github.io"]
