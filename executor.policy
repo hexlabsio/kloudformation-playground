@@ -1,4 +1,4 @@
-grant codeBase "file:%%LIB_DIR%%/jackson-core-2.9.8.jar" {
+grant codeBase "file:%%LIB_DIR%%/lib/jackson-core-2.9.8.jar" {
       permission java.util.PropertyPermission "*", "read,write";
       permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
       permission java.lang.RuntimePermission "setIO";
@@ -6,7 +6,7 @@ grant codeBase "file:%%LIB_DIR%%/jackson-core-2.9.8.jar" {
       permission java.lang.RuntimePermission "accessDeclaredMembers";
 };
 
-grant codeBase "file:%%LIB_DIR%%/jackson-databind-2.9.8.jar" {
+grant codeBase "file:%%LIB_DIR%%/lib/jackson-databind-2.9.8.jar" {
        permission java.util.PropertyPermission "*", "read,write";
        permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
        permission java.lang.RuntimePermission "setIO";
@@ -14,7 +14,7 @@ grant codeBase "file:%%LIB_DIR%%/jackson-databind-2.9.8.jar" {
        permission java.lang.RuntimePermission "accessDeclaredMembers";
 };
 
-grant codeBase "file:%%LIB_DIR%%/kloudformation-0.1.106.jar" {
+grant codeBase "file:%%LIB_DIR%%/lib/kloudformation-0.1.106.jar" {
       permission java.util.PropertyPermission "*", "read,write";
       permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
       permission java.lang.RuntimePermission "setIO";
