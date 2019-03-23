@@ -165,7 +165,7 @@ class Stack: StackBuilder {
                 maximumPercent(200)
                 minimumHealthyPercent(70)
             }
-            desiredCount(2)
+            desiredCount(1)
             networkConfiguration {
                 awsvpcConfiguration(+listOf(subnetA.ref(), subnetB.ref())) {
                     assignPublicIp("ENABLED")
