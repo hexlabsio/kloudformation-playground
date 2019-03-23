@@ -94,7 +94,7 @@ class Stack: StackBuilder {
             containerDefinitions(listOf(
                     ContainerDefinition(
                             name = serviceName.ref(),
-                            image = +"hexlabs/kloudformation-playground",
+                            image = +"hexlabs/kloudformation-playground:0.1.${System.getenv("CIRCLE_BUILD_NUM")}",
                             portMappings = listOf(
                                     PortMapping(containerPort = Value.Of(80))
                             ),
