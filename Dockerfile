@@ -1,4 +1,4 @@
-FROM hexlabs/kotlin-playground:0.1.69
+FROM hexlabs/kotlin-playground:0.1.100
 
 ADD lib/*.jar /app/lib/
 
